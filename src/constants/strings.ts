@@ -15,7 +15,7 @@ export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `Farts must contain ${letter}`
 export const ENTER_TEXT = 'Farts'
 export const DELETE_TEXT = 'Delete'
-export const STATISTICS_TITLE = 'Fartsistics'
+export const STATISTICS_TITLE = 'Fartstistics'
 export const GUESS_DISTRIBUTION_TEXT = 'Guess Fartstribution'
 export const NEW_WORD_TEXT = 'New Farts in'
 export const SHARE_TEXT = 'Share'
