@@ -6,7 +6,7 @@ export const ABOUT_GAME_MESSAGE = 'About this Farts'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough Farts'
 export const WORD_NOT_FOUND_MESSAGE = 'Farts not found'
 export const HARD_MODE_ALERT_MESSAGE =
-  'Fart Mode can only be enabled at the start!'
+  'Farts Mode can only be enabled at the start!'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `The Farts was ${solution}`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
