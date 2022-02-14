@@ -252,7 +252,7 @@ useEffect(() => {
           {GAME_TITLE}
         </h1>
   <RefreshIcon
-          className="h-6 w-6 cursor-pointer"
+          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => window.location.reload()}
         />
         <InformationCircleIcon
