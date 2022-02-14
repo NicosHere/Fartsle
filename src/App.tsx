@@ -1,5 +1,6 @@
 import {
   InformationCircleIcon,
+  RefreshIcon,
   ChartBarIcon,
   CogIcon,
 } from '@heroicons/react/outline'
@@ -250,6 +251,10 @@ useEffect(() => {
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
           {GAME_TITLE}
         </h1>
+  <RefreshIcon
+          className="h-6 w-6 cursor-pointer"
+          onClick={() => window.location.reload()}
+        />
         <InformationCircleIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => setIsInfoModalOpen(true)}
