@@ -1,17 +1,27 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
 import { getStoredIsHighContrastMode } from './localStorage'
+import { isMobileBrowser } from './browser'
 
 export const shareStatus = (
   guesses: string[],
   lost: boolean,
-  isHardMode: boolean
+  isHardMode: boolean,
+  handleShareToClipboard: () => void
 ) => {
-  navigator.clipboard.writeText(
+  const textToShare =
     `Fartsle ${solutionIndex} ${lost ? 'X' : guesses.length}/6${
       isHardMode ? '*' : ''
     }\n\nfartsle.com\n\n` + generateEmojiGrid(guesses)
-  )
+  
+  const shareData = { text: textToShare }
+
+  if (isMobileBrowser() && navigator.canShare(shareData) && navigator.share) {
+    navigator.share(shareData)
+  } else {
+    navigator.clipboard.writeText(textToShare)
+    handleShareToClipboard()
+  }
 }
 
 export const generateEmojiGrid = (guesses: string[]) => {
