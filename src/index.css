@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --animation-speed: 1000ms;
-  --animation-speed-fast: 250ms;
+  --animation-speed: 800ms;
+  --animation-speed-fast: 200ms;
   --default-cell-bg-color: theme('colors.white');
   --default-cell-border-color: theme('colors.black');
   --default-cell-text-color: theme('colors.black');
-  --absent-cell-bg-color: theme('colors.slate.400');
+  --absent-cell-bg-color: theme('colors.neutral.400');
   --correct-cell-bg-color: theme('colors.green.400');
   --present-cell-bg-color: theme('colors.yellow.400');
 }
 
 .dark {
-  --default-cell-bg-color: theme('colors.slate.900');
+  --default-cell-bg-color: theme('colors.neutral.900');
   --default-cell-border-color: theme('colors.white');
   --default-cell-text-color: theme('colors.white');
-  --absent-cell-bg-color: theme('colors.slate.700');
+  --absent-cell-bg-color: theme('colors.neutral.700');
 }
 
 .high-contrast {
@@ -27,7 +27,7 @@
 
 .cell-fill-animation {
   animation: onTypeCell linear;
-  animation-duration: 0.35s;
+  animation-duration: 0.25s;
 }
 
 .cell-reveal {
