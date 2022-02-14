@@ -11,7 +11,7 @@ export const Progress = ({ index, size, label }: Props) => {
       <div className="rounded w-full ml-2">
         <div
           style={{ width: `${5 + size}%` }}
-          className="bg-green-600 text-xs font-medium text-green-100 text-center p-0.5 rounded"
+          className="bg-green-500 text-xs font-medium text-green-100 text-center p-0.5 rounded"
         >
           {label}
         </div>
