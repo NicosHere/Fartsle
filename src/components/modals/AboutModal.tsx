@@ -8,7 +8,7 @@ type Props = {
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="Farts" isOpen={isOpen} handleClose={handleClose}>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-neutral-500 dark:text-neutral-300">
         This is an Farts version of the word guessing game we all know and
         love -{' '}
         <a

@@ -9,7 +9,7 @@ type Props = {
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="How to Fartsle" isOpen={isOpen} handleClose={handleClose}>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-neutral-500 dark:text-neutral-300">
         Guess Farts in 6 tries. After each guess, the color of the tiles will
         change to show how close your guess was to Farts.
       </p>
@@ -21,7 +21,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="N" />
         <Cell value="G" />
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-neutral-500 dark:text-neutral-300">
         The letter F is in Farts and in the correct spot.
       </p>
 
@@ -32,7 +32,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="O" />
         <Cell value="T" status="present" />
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-neutral-500 dark:text-neutral-300">
         The letter T is in Farts but in the wrong spot.
       </p>
 
@@ -43,7 +43,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="U" status="absent" />
         <Cell value="E" />
       </div>
-      <p className="text-sm text-gray-500 dark:text-gray-300">
+      <p className="text-sm text-neutral-500 dark:text-neutral-300">
         The letter U is not in Farts in any spot.
       </p>
     </BaseModal>
