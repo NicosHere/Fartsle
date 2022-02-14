@@ -12,7 +12,7 @@ export const shareStatus = (
   const textToShare =
     `Fartsle ${solutionIndex} ${lost ? 'X' : guesses.length}/6${
       isHardMode ? '*' : ''
-    }\n\nfartsle.com\n\n` + generateEmojiGrid(guesses)
+    }\nfartsle.com\n` + generateEmojiGrid(guesses)
   
   const shareData = { text: textToShare }
 
