@@ -8,32 +8,32 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="How to Fartsle" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Guess the word in 6 tries. After each guess, the color of the tiles will
-        change to show how close your guess was to the word.
+        Guess Farts in 6 tries. After each guess, the color of the tiles will
+        change to show how close your guess was to Farts.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="W" status="correct" />
-        <Cell value="E" />
-        <Cell value="A" />
-        <Cell value="R" />
-        <Cell value="Y" />
+        <Cell value="F" status="correct" />
+        <Cell value="L" />
+        <Cell value="I" />
+        <Cell value="N" />
+        <Cell value="G" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter W is in the word and in the correct spot.
+        The letter F is in Farts and in the correct spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
         <Cell value="P" />
         <Cell value="I" />
-        <Cell value="L" status="present" />
+        <Cell value="L" />
         <Cell value="O" />
-        <Cell value="T" />
+        <Cell value="T" status="present" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter L is in the word but in the wrong spot.
+        The letter T is in Farts but in the wrong spot.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -44,7 +44,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        The letter U is not in the word in any spot.
+        The letter U is not in Farts in any spot.
       </p>
     </BaseModal>
   )
