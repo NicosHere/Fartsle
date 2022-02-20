@@ -49,7 +49,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
         If you enjoy this Fartsle, feel free to buy me a coffee -{' '}
         <a
-          href="https://cash.app/$NicolasKatzen"
+          href="https://cash.app/$NicolasKatzen" target="_blank"
           className="underline font-bold"
         >
           $NicolasKatzen
