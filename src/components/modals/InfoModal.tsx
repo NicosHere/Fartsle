@@ -46,6 +46,15 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       <p className="text-sm text-neutral-500 dark:text-neutral-300">
         The letter U is not in Farts in any spot. 
       </p>
+  <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
+        If you enjoy this Fartsle, feel free to buy me a coffee -{' '}
+        <a
+          href="https://cash.app/$NicolasKatzen"
+          className="underline font-bold"
+        >
+          $NicolasKatzen
+        </a>{' '}
+      </p>
     </BaseModal>
   )
 }
