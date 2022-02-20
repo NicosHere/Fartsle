@@ -44,7 +44,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-neutral-500 dark:text-neutral-300">
-        The letter U is not in Farts in any spot.
+        The letter U is not in Farts in any spot. 
       </p>
     </BaseModal>
   )
