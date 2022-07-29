@@ -2,7 +2,24 @@
 <html>
 
 <head>
+<script>
+var t=0;
+var b=0;
+setInterval(function(){
+  var f=Math.floor((Math.sin(t)+1)*127.5);
+  var f2=Math.floor((Math.sin(b)+1)*127.5);
+  var f3=Math.floor((Math.cos(t)+1)*127.5);
+  var f4=Math.floor((Math.cos(b)+1)*127.5);
+  document.body.style.backgroundColor="rgb("+255+","+f+","+f2+")";
+  t+=0.005;
+  b+=0.0005;
+},10);
+</script>
 <style>
+* {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
 body {
   background-color: #000000;
 }
@@ -21,7 +38,7 @@ p {
 
 table, th, td {
   border: 3px solid black;
-  background-color: #4CAF50;
+  background-color: #696969;
   border-collapse: collapse;
   width: 33.3333%;
 }
@@ -37,6 +54,22 @@ td {
 td {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
+td:hover {
+  background-color: #FFD700;
+}
+
+* {
+  font-family: helvetica;
+}
+
+
+button {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+button:hover {
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
 
 
 h1 {
@@ -62,24 +95,6 @@ p {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-
-.button {
-  -webkit-animation-name: mymove; /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
-  animation-name: mymove;
-  animation-duration: 2s;
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes mymove {
-  50% {background-color: #FFFFFF;}
-}
-
-/* Standard syntax */
-@keyframes mymove {
-  50% {background-color: #FFFFFF;}
-}
-
 
 </style>
 </head>
@@ -217,6 +232,16 @@ function guess(){
   }
 }
 </script>
+
+<button type="button"
+onclick="location.reload()"
+style="font-size: 30px;
+background-color: #FFD700;
+border-radius: 12px;
+border: 5px solid black;
+padding: 10px;
+margin-bottom: 15px;
+"> Start Over </button>
 
 </body>
 </html
