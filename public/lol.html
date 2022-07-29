@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+body {
+  background-color: #000000;
+}
+
+h1 {
+  color: #FFFFFF;
+}
+
+h2 {
+  color: #FFFFFF;
+}
+
+p {
+  color: #FFFFFF;
+}
+
+table, th, td {
+  border: 3px solid black;
+  background-color: #4CAF50;
+  border-collapse: collapse;
+  width: 33.3333%;
+}
+
+td {
+  height: 120px;
+  width: 120px;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+
+h1 {
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 40px;
+  color: #FFD700;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 30px;
+  color: #FFD700;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 15px;
+  color: #FFD700;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.button {
+  -webkit-animation-name: mymove; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+  animation-name: mymove;
+  animation-duration: 2s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+  50% {background-color: #FFFFFF;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  50% {background-color: #FFFFFF;}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h2>Tic Tac Toe</h2>
+
+<table>
+  <tr>
+    <td id="0"></td>
+    <td id="1"></td> 
+    <td id="2"></td>
+  </tr>
+  <tr>
+    <td id="3"></td>
+    <td id="4"></td> 
+    <td id="5"></td>
+  </tr>
+  <tr>
+    <td id="6"></td>
+    <td id="7"></td> 
+    <td id="8"></td>
+  </tr>
+</table>
+
+<script>
+var turn = 1;
+var boxesFilled = 0;
+
+function isValidMove(clickedId){
+  if(document.getElementById(clickedId).innerHTML == "")
+    return true;
+  else
+    return false;
+}
+
+function getSymbol(){
+  if(turn%2 == 1)
+    return "X";
+  else
+    return "O";
+}
+
+function checkForWinner(symbol){
+  if(document.getElementById("0").innerHTML == symbol && document.getElementById("1").innerHTML == symbol && document.getElementById("2").innerHTML == symbol)
+    return true;
+  if(document.getElementById("3").innerHTML == symbol && document.getElementById("4").innerHTML == symbol && document.getElementById("5").innerHTML == symbol)
+    return true;
+  if(document.getElementById("6").innerHTML == symbol && document.getElementById("7").innerHTML == symbol && document.getElementById("8").innerHTML == symbol)
+    return true;
+  if(document.getElementById("0").innerHTML == symbol && document.getElementById("3").innerHTML == symbol && document.getElementById("6").innerHTML == symbol)
+    return true;
+  if(document.getElementById("1").innerHTML == symbol && document.getElementById("4").innerHTML == symbol && document.getElementById("7").innerHTML == symbol)
+    return true;
+  if(document.getElementById("2").innerHTML == symbol && document.getElementById("5").innerHTML == symbol && document.getElementById("8").innerHTML == symbol)
+    return true;
+  if(document.getElementById("0").innerHTML == symbol && document.getElementById("4").innerHTML == symbol && document.getElementById("8").innerHTML == symbol)
+    return true;
+  if(document.getElementById("2").innerHTML == symbol && document.getElementById("4").innerHTML == symbol && document.getElementById("6").innerHTML == symbol)
+    return true;
+  else
+    return false;
+}
+
+function checkForDraw(){
+  if(boxesFilled == 9)
+    return true;
+  else
+    return false;
+}
+
+function reset(){
+  turn = 1;
+  boxesFilled = 0;
+  for(var i=0;i<9;i++){
+    document.getElementById(i).innerHTML = "";
+  }
+}
+
+function playerTurn(clickedId){
+  if(isValidMove(clickedId)){
+    document.getElementById(clickedId).innerHTML = getSymbol();
+    if(checkForWinner(getSymbol())){
+      alert(getSymbol() + " wins!");
+      reset();
+    }
+    else if(checkForDraw()) {
+      alert("Game is a draw!");
+      reset();
+    }
+    else{
+      turn++;
+      boxesFilled++;
+    }
+  }
+}
+
+for(var i=0;i<9;i++){
+  document.getElementById(i).addEventListener("click", function(){
+    playerTurn(this.id);
+  });
+}
+
+</script>
+
+
+<h2>Guess the Number</h2>
+
+<p>I am thinking of a number between 1 and 10. Guess what it is!</p>
+<button type="button"
+onclick="guess()"
+style="font-size: 30px;
+background-color: #FFD700;
+border-radius: 12px;
+border: 5px solid black;
+padding: 10px;
+margin-bottom: 15px;
+"> Guess </button>
+
+<p id="result"></p>
+
+<script>
+var randomNumber = Math.floor(Math.random() * 10) + 1;
+var numberOfGuesses = 0;
+
+function guess(){
+  var userGuess = prompt("Enter a number");
+  if(userGuess == randomNumber){
+    document.getElementById("result").innerHTML = "You guessed the number! It took you " + numberOfGuesses + " guesses.";
+  }
+  else{
+    numberOfGuesses++;
+    document.getElementById("result").innerHTML = "That's not it! Guess again!";
+  }
+}
+</script>
+
+</body>
+</html
